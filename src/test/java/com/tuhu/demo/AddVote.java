@@ -21,9 +21,10 @@ public class AddVote
     @Test
     public void topicDetailAddVote()
     {
-        given().param("votable_id","12780655").
-                param("vote_type","topic").
-                header("Authorization", Settings.prodAuth)
+        given()
+                .param("votable_id","12780655")
+                .param("vote_type","topic")
+                .header("Authorization", Settings.prodAuth)
                 .when()
                 .post("/votes")
                 //.prettyPrint();
