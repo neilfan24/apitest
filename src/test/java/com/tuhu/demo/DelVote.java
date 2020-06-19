@@ -9,15 +9,16 @@ public class DelVote
     @BeforeClass
     public void setUp()
     {
-        RestAssured.baseURI = "http://hushuo-api.tuhu.cn/api";
+        RestAssured.baseURI = Settings.prodURL;
     }
 
     @Test
     public void topicDetailDelVote()
     {
-        given().param("votable_id","12780655").
-                param("vote_type","topic").
-                header("Authorization","Bearer 9d63fdf6b4934f45b0fea967d9cc766c")
+        given()
+                .param("votable_id","12780655")
+                .param("vote_type","topic")
+                .header("Authorization",Settings.prodAuth)
                 .when()
                 .delete("/votes/1")
                 .then().assertThat().statusCode(200);
