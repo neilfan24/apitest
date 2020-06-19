@@ -27,7 +27,6 @@ public class AddVote
                 .header("Authorization", Settings.prodAuth)
                 .when()
                 .post("/votes")
-                //.prettyPrint();
                 .then().statusCode(201).and().body("user_id",equalTo(Settings.prodUserid));
     }
 }
