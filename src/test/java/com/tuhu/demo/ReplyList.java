@@ -14,13 +14,7 @@ public class ReplyList
     @BeforeClass
     public void setUP(){
         //指定 URL
-        RestAssured.baseURI = "http://hushuo-api.tuhu.cn/api";
-        long timeStamp = System.currentTimeMillis();
-        SimpleDateFormat temp = new SimpleDateFormat("yyyyMMddHHmm");
-        String time = temp.format(timeStamp);
-        //System.out.println(time);
-        String topicBody = "apiAutoTest" + time;
-        //System.out.println(topicBody);
+        RestAssured.baseURI = Settings.prodURL;
     }
 
     @Test

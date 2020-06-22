@@ -35,7 +35,7 @@ public class CreateTopic
                 .given().contentType("application/json")
                 .header("Authorization", Settings.testAuth)
                 .header("Accept","application/json")
-                .body(Settings.bodyStr)
+                .body(Settings.topicBodyStr)
                 .post("/mobile/topic")
                 //.prettyPrint();
                 .then()

@@ -21,12 +21,16 @@ public class AddVote
     @Test
     public void topicDetailAddVote()
     {
-        given()
-                .param("votable_id","12780655")
-                .param("vote_type","topic")
-                .header("Authorization", Settings.prodAuth)
-                .when()
-                .post("/votes")
-                .then().statusCode(201).and().body("user_id",equalTo(Settings.prodUserid));
+
+            given()
+                    .param("votable_id", "12780655")
+                    .param("vote_type", "topic")
+                    .header("Authorization", Settings.prodAuth)
+                    .when()
+                    .post("/votes")
+                    .then()
+                    .statusCode(201)
+                    //.statusCode(200)
+                    .and().body("user_id", equalTo(Settings.prodUserid));
     }
 }
