@@ -26,7 +26,6 @@ public class ReplyList
                 //.then().extract().path("current_page");
                 //.prettyPrint();
                 .then().body("data.id[0]", equalTo(4368989));
-
     }
 
 }

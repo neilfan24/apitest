@@ -10,6 +10,7 @@ public class CreateTopic
     //取帖子的id，删除帖子时需要用
     private int id;
 
+
     @BeforeClass
     public void setUp()
     {
@@ -39,8 +40,8 @@ public class CreateTopic
                 .post("/mobile/topic")
                 //.prettyPrint();
                 .then()
-                .assertThat().body("body",containsString(Settings.body))
-                .assertThat().body("title",equalTo(Settings.title))
+                .assertThat().body("body",containsString(Settings.topicBody))
+                .assertThat().body("title",equalTo(Settings.topicTitle))
                 //取出response中的帖子id，赋值给变量id，用于删除帖子
                 .extract().path("id");
         System.out.println(id);

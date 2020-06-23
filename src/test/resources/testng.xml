@@ -3,10 +3,11 @@
 <suite name="All Test Suite" allow-return-values="true">
     <test name="demo">
                 <classes>
-                    <class name="com.tuhu.demo.ReplyList"></class>
-                    <class name="com.tuhu.demo.Addvote"></class>
-                    <class name="com.tuhu.demo.Delvote"></class>
-                    <class name="com.tuhu.demo.CreateTopic"></class>
+                    <class name="com.tuhu.demo.ReplyList"/>
+                    <class name="com.tuhu.demo.AddVote"/>
+                    <class name="com.tuhu.demo.DelVote"/>
+                    <class name="com.tuhu.demo.CreateTopic"/>
+                    <class name="com.tuhu.demo.HotSearch"/>
                 </classes>
     </test>
 </suite>
