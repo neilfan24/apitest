@@ -10,16 +10,16 @@ public class Settings
     public static String prodURL = "https://hushuo-api.tuhu.cn/api";
     public static int testUserid = 11344091;
     public static int prodUserid = 26150043;
-    public static String testBackendAuth = "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjRGYUJEU2xzd2hJRGwxU190Q2hGdVJyZzJ0ZyIsInR5cCI6IkpXVCIsIng1dCI6IjRGYUJEU2xzd2hJRGwxU190Q2hGdVJyZzJ0ZyJ9.eyJuYmYiOjE1OTI4MjM5NTEsImV4cCI6MTU5MjgyNzU1MSwiaXNzIjoiaHR0cHM6Ly9hY2Nlc3MudHVodXRlc3QuY24iLCJhdWQiOlsiaHR0cHM6Ly9hY2Nlc3MudHVodXRlc3QuY24vcmVzb3VyY2VzIiwieWV3dWFwaSJdLCJjbGllbnRfaWQiOiJzaXRlX2h1c2h1byIsInN1YiI6IjA4ZDdkZDJiZmJmYTQ1MGI4NTM3ZGZkMjMzODk3YWEzIiwiYXV0aF90aW1lIjoxNTkyODIzOTUwLCJpZHAiOiJFbXBsb3llZSIsIm5hbWUiOiJkZXZ0ZWFtIiwiZW1haWwiOiJkZXZ0ZWFtQHR1aHUud29yayIsImVtcGxveWVlX2lkIjoiMTE1MTkiLCJzY29wZSI6WyJvcGVuaWQiLCJ5ZXd1YXBpIl0sImFtciI6WyJFbXBsb3llZSIsIlBhc3N3b3JkIl19.SX6ZL3lhOO3JfnM40HEQALVoUQqlfn6nWUx3O7esOOqdrIwd8Rq1VL0mCRcK6IIERpmsVtmG-rZJfwbmd5e3o_Rvxje1JAjeuCly6hFfk89eH-gZoiKR517itA7BtS8rEhHT0rFe2NseSgMEKkoVz_xAG1dEhA6Qz1RraxqSn7E7CgQekZgMeRLqX34DkJu_x87MIDDGMRQByNav-1Uf48syXH133xnnrz7Pdbv93vlvAIJ_AWXHLtXAIQsUA9DcscchcCB6l_fJjB9CdDD6WGg--1fz0LK0vmrsDmfe7FG29j8h7fPiJcAv6Act6IIY5ITNiTl9mRCPwPwaih3i2w";
+    public static String testBackendAuth = "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjRGYUJEU2xzd2hJRGwxU190Q2hGdVJyZzJ0ZyIsInR5cCI6IkpXVCIsIng1dCI6IjRGYUJEU2xzd2hJRGwxU190Q2hGdVJyZzJ0ZyJ9.eyJuYmYiOjE1OTI4OTg4NTUsImV4cCI6MTU5MjkwMjQ1NSwiaXNzIjoiaHR0cHM6Ly9hY2Nlc3MudHVodXRlc3QuY24iLCJhdWQiOlsiaHR0cHM6Ly9hY2Nlc3MudHVodXRlc3QuY24vcmVzb3VyY2VzIiwieWV3dWFwaSJdLCJjbGllbnRfaWQiOiJzaXRlX2h1c2h1byIsInN1YiI6IjA4ZDdkZDJiZmJmYTQ1MGI4NTM3ZGZkMjMzODk3YWEzIiwiYXV0aF90aW1lIjoxNTkyODk4ODU0LCJpZHAiOiJFbXBsb3llZSIsIm5hbWUiOiJkZXZ0ZWFtIiwiZW1haWwiOiJkZXZ0ZWFtQHR1aHUud29yayIsImVtcGxveWVlX2lkIjoiMTE1MTkiLCJzY29wZSI6WyJvcGVuaWQiLCJ5ZXd1YXBpIl0sImFtciI6WyJFbXBsb3llZSIsIlBhc3N3b3JkIl19.cSKKbm6oG-pfNBuxx_KAdqClOQCCEgjX-jM4fZ4zJXB8KBtUi9J9463iE51EgNKYNjq4btwVU48MJaf0G8RRlzGp8nih5ej1l25Je_A86X6LuFwrPdrPn_LttSyNFwkyk7o_nOQRTqOUQw_JrBmN0xHvnTbCp5RqVAIP2NS85wvf7jDMRO0sbN2KSs5TNLVVu4tnixBGdo0IGjXBhWayK3UFZYDcAvGn1AmIaMKIuRkNQEb_sonJvZ-DxZ2u3tlWxCAcL6vR9b_4dd0Db9jdHsDS3WqvXzRf6eH575jrEIzGU_V-np3N6Ks6641gHPW1MBi5eQ32womvP_bWccO2aA";
 
     //获取时间戳，转换成string
     public static long timeStamp = System.currentTimeMillis();
-    public static SimpleDateFormat temp = new SimpleDateFormat("yyyyMMddHHmm");
+    public static SimpleDateFormat temp = new SimpleDateFormat("yyMMddHHmm");
     public static String time = temp.format(timeStamp);
-    //给body和title字段赋值为固定内容+时间戳,目的为防止重复的title和body
+    //不可重复的变量使用固定文字+当前时间戳赋值
     public static String topicBody = "apiAutoTest" + time;
     public static String topicTitle = "api自动化" + time;
-    public static String hotsearch_name = "apiAutotest" + time;
+    public static String hotsearch_name = "apiAT" + time;
 
     //发帖的body，json转为string
     public static String topicBodyStr = "{\n" +
