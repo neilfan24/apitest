@@ -2,8 +2,7 @@ package com.tuhu.demo;
 
 import java.text.SimpleDateFormat;
 
-public class Settings
-{
+public class Settings {
     public static String testAuth = "Bearer a2fd985022824746b259fe82cc094861"; //test环境用户验证
     public static String prodAuth = "Bearer 9d63fdf6b4934f45b0fea967d9cc766c"; //正式环境用户验证
     public static String testURL = "https://hushuo-api.tuhutest.cn/api";
@@ -17,12 +16,24 @@ public class Settings
     public static SimpleDateFormat temp = new SimpleDateFormat("MMddHHmmss");
     public static String time = temp.format(timeStamp);
     //不可重复的变量使用固定文字+当前时间戳赋值
-    public static String topicBody = "apiAutoTest" + time;
+    public static String topicBody = "apiAutoTest";
     public static String topicTitle = "api自动化" + time;
     public static String hotsearchname_text = "Text" + time;
     public static String hotsearchname_Route = "Route" + time;
     public static String hotsearchname_H5 = "H5" + time;
     public static String hotsearchname_XCX = "XCX" + time;
+
+    public static String setTimeStamp()
+    {
+        long timeStamp = System.currentTimeMillis();
+        SimpleDateFormat temp = new SimpleDateFormat("MMddHHmmss");
+        return temp.format(timeStamp);
+    }
+
+    public static String uniqueValue(String pre)
+    {
+        return pre + setTimeStamp();
+    }
 
     //发帖的body，json转为string
     public static String topicBodyStr = "{\n" +

@@ -12,10 +12,11 @@ public class HotSearchLink
     public void setUp()
     {
         baseURI = Settings.testURL;
+        Settings.uniqueValue(Settings.topicBody);
     }
 
     @Test (priority = 1)
-    public void createHotSearchAppRoute() throws InterruptedException
+    public void createHotSearchAppRoute()
     {
         given()
                 .contentType("application/json")
