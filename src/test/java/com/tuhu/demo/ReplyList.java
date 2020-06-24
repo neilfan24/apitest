@@ -7,10 +7,12 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class ReplyList
 {
+    //private String test;
     @BeforeClass
     public void setUP(){
         //指定 URL
         RestAssured.baseURI = Settings.prodURL;
+        //test = Settings.uniqueValue(Settings.topicBody);
     }
 
     @Test
