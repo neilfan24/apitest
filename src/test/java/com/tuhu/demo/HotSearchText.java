@@ -13,7 +13,6 @@ public class HotSearchText
     public void setUp()
     {
         baseURI = Settings.testURL;
-
     }
 
     //测试从后台创建文本类型的热搜词接口

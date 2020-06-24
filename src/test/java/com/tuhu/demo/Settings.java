@@ -16,24 +16,24 @@ public class Settings {
     public static SimpleDateFormat temp = new SimpleDateFormat("MMddHHmmss");
     public static String time = temp.format(timeStamp);
     //不可重复的变量使用固定文字+当前时间戳赋值
-    public static String topicBody = "apiAutoTest";
+    public static String topicBody = "apiAutoTest" + time;
     public static String topicTitle = "api自动化" + time;
     public static String hotsearchname_text = "Text" + time;
     public static String hotsearchname_Route = "Route" + time;
     public static String hotsearchname_H5 = "H5" + time;
     public static String hotsearchname_XCX = "XCX" + time;
 
-    public static String setTimeStamp()
+/*    public static String setTimeStamp()
     {
         long timeStamp = System.currentTimeMillis();
         SimpleDateFormat temp = new SimpleDateFormat("MMddHHmmss");
         return temp.format(timeStamp);
     }
 
-    public static String uniqueValue(String pre)
+    public static String uniqueValue(String value)
     {
-        return pre + setTimeStamp();
-    }
+        return value + setTimeStamp();
+    }*/
 
     //发帖的body，json转为string
     public static String topicBodyStr = "{\n" +

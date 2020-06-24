@@ -6,13 +6,10 @@ import org.testng.annotations.*;
 
 public class HotSearchLink
 {
-    private String name;
-
     @BeforeClass
     public void setUp()
     {
         baseURI = Settings.testURL;
-        Settings.uniqueValue(Settings.topicBody);
     }
 
     @Test (priority = 1)
