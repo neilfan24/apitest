@@ -36,8 +36,28 @@ public class HotSearchText
         System.out.println(name);
     }
 
+    //验证热搜词name是否不可重名
+    @Test(priority = 2)
+    public void sameNameVaildation()
+    {
+        given()
+                .header("Accept","application/json")
+                .header("Authorization",Settings.testBackendAuth)
+                .contentType("application/json")
+                .body("{\n" +
+                        "    \"name\": \""+ Settings.hotsearchname_text +"\",\n" +
+                        "    \"sort\": 1,\n" +
+                        "    \"type\": 1\n" +
+                        "}")
+                .post("/hot-searches")
+                //.prettyPrint();
+                .then()
+                .body("errors.name",hasItem("热搜词名称已被占用"));
+                //.assertThat().body("message",equalTo("The given data was invalid."));
+    }
+
     //验证C端热搜词接口返回数据正确性
-    @Test (priority = 2)
+    @Test (priority = 3)
     public void hotSearch()
     {
         id = given()
@@ -53,7 +73,7 @@ public class HotSearchText
     }
 
     //测试禁用热搜词
-    @Test (priority = 3)
+    @Test (priority = 4)
     public void hotSearchDisable()
     {
         given()
@@ -70,7 +90,7 @@ public class HotSearchText
     }
 
     //测试启用热搜词
-    @Test (priority = 4)
+    @Test (priority = 5)
     public void hotSearchEnable()
     {
         given()
