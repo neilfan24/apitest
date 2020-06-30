@@ -29,14 +29,14 @@ public class HotSearchLink
                 .post("/hot-searches")
                 //.prettyPrint();
                 .then()
+                .assertThat().body("name",equalTo(Settings.hotsearchname_Route))
                 .assertThat().body("jump_url",containsString("/bbs/tab/recommend"))
                 .assertThat().body("jump_url_type",equalTo(1));
     }
 
     @Test (priority = 2)
-    public void createHotSearchH5() throws InterruptedException
+    public void createHotSearchH5()
     {
-        Thread.sleep(1000);
         given()
                 .contentType("application/json")
                 .header("Accept","application/json")
@@ -49,13 +49,16 @@ public class HotSearchLink
                         "\"type\": 2\n" +
                         "}")
                 .post("/hot-searches")
-                .prettyPrint();
+                .then()
+                .body("name",equalTo(Settings.hotsearchname_H5))
+                .body("jump_url",containsString("https://wx.tuhu.cn/vue/NaActivity/pages/home/index?id=5BC5FAD2&mkt=2020061108"))
+                .body("jump_url_type",equalTo(2));
+                //.prettyPrint();
     }
 
     @Test (priority = 3)
-    public void createHotSearchXCX() throws InterruptedException
+    public void createHotSearchXCX()
     {
-        Thread.sleep(1000);
         given()
                 .contentType("application/json")
                 .header("Accept","application/json")
@@ -69,6 +72,12 @@ public class HotSearchLink
                         "\"type\": 2\n" +
                         "}")
                 .post("/hot-searches")
-                .prettyPrint();
+                .then()
+                .body("name",equalTo(Settings.hotsearchname_XCX))
+                .body("mini_program_app_id",equalTo("wx27d20205249c56a3"))
+                .body("mini_program_raw_id",equalTo("gh_513038890d99"))
+                .body("jump_url",containsString("plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id=117"))
+                .body("jump_url_type",equalTo(3));
+                //.prettyPrint();
     }
 }

@@ -23,7 +23,7 @@ public class NaviMenu
                 .contentType("application/json")
                 .body("{\n" +
                         "    \"allow_jump_home\": 0,\n" +
-                        "    \"feed_id\": 74,\n" +
+                        "    \"feed_id\": 73,\n" +
                         "    \"name\": \""+ Settings.naviMenuName +"\",\n" +
                         "    \"pool\": 1,\n" +
                         "    \"sort\": 1\n" +
@@ -77,5 +77,46 @@ public class NaviMenu
                 .patch("/navigation-menus/" + id)
                 .then()
                 .body("state",equalTo(1));
+    }
+
+    @Test(priority = 5)
+    public void editNaviMenu()
+    {
+        given()
+                .header("Accept","application/json")
+                .header("Authorization",Settings.testBackendAuth)
+                .contentType("application/json")
+                .body("{\n" +
+                        "    \"allow_jump_home\": 1\n" +
+                        "}")
+                .patch("navigation-menus/" + id)
+                .then()
+                .body("allow_jump_home",equalTo(1));
+    }
+
+    @Test(priority = 6)
+    public void editNaviFeed()
+    {
+        given()
+                .header("Accept","application/json")
+                .header("Authorization",Settings.testBackendAuth)
+                .contentType("application/json")
+                .body("{\n" +
+                        "\"board_ids\": [\"4151/3\"],\n" +
+                        "\"pool\": 3,\n" +
+                        "\"tag_ids\": [15],\n" +
+                        "\"topic_types\": [1],\n" +
+                        "\"user_ids\": [37],\n" +
+                        "\"vehicle_line_ids\": [\"3433/3605\"]\n" +
+                        "}")
+                .patch("/feeds/73")
+                .then()
+                .body("vehicle_line_ids",hasItem("3433/3605"))
+                .body("board_ids",hasItem("4151/3"))
+                .body("pool",equalTo(3))
+                .body("tag_ids",hasItem(15))
+                .body("user_ids",hasItem(37))
+                .body("topic_types",hasItem(1));
+                //.prettyPrint();
     }
 }
