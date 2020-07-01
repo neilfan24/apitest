@@ -21,8 +21,8 @@ public class ReplyList
         RestAssured.given()
                 .header("Accept","application/json")
                 .param("topic_id","12775058").param("is_blocked","no").get("/replies")
-                //.prettyPrint();
-                .then().body("data.id[0]", equalTo(4368989));
+                .prettyPrint();
+                //.then().body("data.id[0]", equalTo(4368989));
     }
 
 }

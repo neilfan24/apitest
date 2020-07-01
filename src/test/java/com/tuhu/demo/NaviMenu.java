@@ -14,19 +14,19 @@ public class NaviMenu
         baseURI = Settings.testURL;
     }
 
-    @Test(priority = 1)
-    public void addNviMenu()
+    @Test(priority = 1, description = "新建推荐导航")
+    public void createNviMenu()
     {
         name = given()
                 .header("Accept","application/json")
                 .header("Authorization", Settings.testBackendAuth)
                 .contentType("application/json")
                 .body("{\n" +
-                        "    \"allow_jump_home\": 0,\n" +
-                        "    \"feed_id\": 73,\n" +
-                        "    \"name\": \""+ Settings.naviMenuName +"\",\n" +
-                        "    \"pool\": 1,\n" +
-                        "    \"sort\": 1\n" +
+                        "\"allow_jump_home\": 0,\n" +
+                        "\"feed_id\": 73,\n" +
+                        "\"name\": \""+ Settings.naviMenuName +"\",\n" +
+                        "\"pool\": 1,\n" +
+                        "\"sort\": 1\n" +
                         "}")
                 .post("/navigation-menus")
                 .then()
@@ -36,7 +36,7 @@ public class NaviMenu
                 //.prettyPrint();
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, description = "C端推荐导航接口校验新建的导航信息是否正确")
     public void naviMenuList()
     {
         id = given()
@@ -49,7 +49,7 @@ public class NaviMenu
                 //.prettyPrint();
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, description = "后台禁用新建的导航")
     public void disableNaviMenu()
     {
         given()
@@ -57,14 +57,14 @@ public class NaviMenu
                 .header("Authorization", Settings.testBackendAuth)
                 .contentType("application/json")
                 .body("{\n" +
-                        "    \"state\": 2\n" +
+                        "\"state\": 2\n" +
                         "}")
                 .patch("/navigation-menus/" + id)
                 .then()
                 .body("state",equalTo(2));
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4, description = "后台启用新建的导航")
     public void enableNaviMenu()
     {
         given()
@@ -72,14 +72,14 @@ public class NaviMenu
                 .header("Authorization", Settings.testBackendAuth)
                 .contentType("application/json")
                 .body("{\n" +
-                        "    \"state\": 1\n" +
+                        "\"state\": 1\n" +
                         "}")
                 .patch("/navigation-menus/" + id)
                 .then()
                 .body("state",equalTo(1));
     }
 
-    @Test(priority = 5)
+    @Test(priority = 5, description = "后台编辑导航信息，是否支持养车头条跳转")
     public void editNaviMenu()
     {
         given()
@@ -87,14 +87,14 @@ public class NaviMenu
                 .header("Authorization",Settings.testBackendAuth)
                 .contentType("application/json")
                 .body("{\n" +
-                        "    \"allow_jump_home\": 1\n" +
+                        "\"allow_jump_home\": 1\n" +
                         "}")
                 .patch("navigation-menus/" + id)
                 .then()
                 .body("allow_jump_home",equalTo(1));
     }
 
-    @Test(priority = 6)
+    @Test(priority = 6, description = "后台编辑导航对应的feed配置，修改feed里的筛选条件")
     public void editNaviFeed()
     {
         given()

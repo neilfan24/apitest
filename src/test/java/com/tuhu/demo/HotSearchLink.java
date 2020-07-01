@@ -12,7 +12,7 @@ public class HotSearchLink
         baseURI = Settings.testURL;
     }
 
-    @Test (priority = 1)
+    @Test (priority = 1, description = "创建跳转到APP内部路径的热搜词")
     public void createHotSearchAppRoute()
     {
         given()
@@ -34,7 +34,7 @@ public class HotSearchLink
                 .assertThat().body("jump_url_type",equalTo(1));
     }
 
-    @Test (priority = 2)
+    @Test (priority = 2, description = "创建跳转到H5的热搜词")
     public void createHotSearchH5()
     {
         given()
@@ -56,7 +56,7 @@ public class HotSearchLink
                 //.prettyPrint();
     }
 
-    @Test (priority = 3)
+    @Test (priority = 3, description = "创建跳转到小程序的热搜词")
     public void createHotSearchXCX()
     {
         given()
