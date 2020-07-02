@@ -15,7 +15,7 @@ public class ReplyList
         //test = Settings.uniqueValue(Settings.topicBody);
     }
 
-    @Test
+    @Test(description = "校验回复列表第一条数据正确性")
     public void replyList()
     {
         RestAssured.given()

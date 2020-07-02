@@ -90,6 +90,7 @@ public class NaviMenu
                         "\"allow_jump_home\": 1\n" +
                         "}")
                 .patch("navigation-menus/" + id)
+                //.prettyPrint();
                 .then()
                 .body("allow_jump_home",equalTo(1));
     }

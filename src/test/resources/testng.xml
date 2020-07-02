@@ -5,9 +5,9 @@
                 <classes>
                     <class name="com.tuhu.demo.ReplyList"/>
                     <class name="com.tuhu.demo.AddVote"/>
-                    <class name="com.tuhu.demo.DelVote"/>
+                    <!--<class name="com.tuhu.demo.DelVote"/>
                     <class name="com.tuhu.demo.CreateTopic"/>
-                    <class name="com.tuhu.demo.HotSearch"/>
+                    <class name="com.tuhu.demo.HotSearchText"/>-->
                 </classes>
     </test>
 </suite>

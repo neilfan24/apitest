@@ -1,5 +1,6 @@
 package com.tuhu.demo;
 
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import org.testng.annotations.*;
 import static org.hamcrest.Matchers.*;
