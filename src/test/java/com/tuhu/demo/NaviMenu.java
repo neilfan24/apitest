@@ -22,21 +22,21 @@ public class NaviMenu
                 .header("Authorization", Settings.testBackendAuth)
                 .contentType("application/json")
                 .body("{\n" +
-                        "\"allow_jump_home\": 0,\n" +
-                        "\"feed_id\": 73,\n" +
+                        "\"allowJumpHome\": 1,\n" +
+                        "\"feedId\": 50,\n" +
                         "\"name\": \""+ Settings.naviMenuName +"\",\n" +
                         "\"pool\": 1,\n" +
                         "\"sort\": 1\n" +
                         "}")
                 .post("/navigation-menus")
-                .then()
-                .body("name",equalTo(Settings.naviMenuName))
-                .extract().path("name");
-        System.out.println(name);
-                //.prettyPrint();
+                /*.then()
+                .body("data.name",equalTo(Settings.naviMenuName))
+                .extract().path("data.name");
+        System.out.println(name);*/
+                .prettyPrint();
     }
 
-    @Test(priority = 2, description = "C端推荐导航接口校验新建的导航信息是否正确")
+    //@Test(priority = 2, description = "C端推荐导航接口校验新建的导航信息是否正确")
     public void naviMenuList()
     {
         id = given()
@@ -49,7 +49,7 @@ public class NaviMenu
                 //.prettyPrint();
     }
 
-    @Test(priority = 3, description = "后台禁用新建的导航")
+    //@Test(priority = 3, description = "后台禁用新建的导航")
     public void disableNaviMenu()
     {
         given()
@@ -61,10 +61,10 @@ public class NaviMenu
                         "}")
                 .patch("/navigation-menus/" + id)
                 .then()
-                .body("state",equalTo(2));
+                .body("data.state",equalTo(2));
     }
 
-    @Test(priority = 4, description = "后台启用新建的导航")
+    //@Test(priority = 4, description = "后台启用新建的导航")
     public void enableNaviMenu()
     {
         given()
@@ -79,7 +79,7 @@ public class NaviMenu
                 .body("state",equalTo(1));
     }
 
-    @Test(priority = 5, description = "后台编辑导航信息，是否支持养车头条跳转")
+    //@Test(priority = 5, description = "后台编辑导航信息，是否支持养车头条跳转")
     public void editNaviMenu()
     {
         given()
@@ -95,7 +95,7 @@ public class NaviMenu
                 .body("allow_jump_home",equalTo(1));
     }
 
-    @Test(priority = 6, description = "后台编辑导航对应的feed配置，修改feed里的筛选条件")
+    //@Test(priority = 6, description = "后台编辑导航对应的feed配置，修改feed里的筛选条件")
     public void editNaviFeed()
     {
         given()
