@@ -24,6 +24,7 @@ public class Settings {
     public static String hotsearchname_H5 = "H5" + time;
     public static String hotsearchname_XCX = "XCX" + time;
     public static String naviMenuName = "Navi" + time;
+    public static String replyBody = "这是一条评论啊";
 
 /*    public static String setTimeStamp()
     {
