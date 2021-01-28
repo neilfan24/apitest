@@ -1,8 +1,9 @@
 com\tuhu\demo\AddVote.class
-com\tuhu\demo\ReplyList.class
+com\tuhu\demo\BoardList.class
 com\tuhu\demo\HotSearchText.class
 com\tuhu\demo\DelVote.class
 com\tuhu\demo\HotSearchLink.class
 com\tuhu\demo\CreateTopic.class
 com\tuhu\demo\NaviMenu.class
 com\tuhu\demo\Settings.class
+com\tuhu\demo\Reply.class

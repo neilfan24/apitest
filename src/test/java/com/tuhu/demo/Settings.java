@@ -3,11 +3,11 @@ package com.tuhu.demo;
 import java.text.SimpleDateFormat;
 
 public class Settings {
-    public static String testAuth = "Bearer a2fd985022824746b259fe82cc094861"; //test环境用户验证
+    public static String testAuth = "Bearer 017e3747a56e44978cb61b7284e82e64"; //test环境用户验证
     public static String prodAuth = "Bearer 9d63fdf6b4934f45b0fea967d9cc766c"; //正式环境用户验证
     public static String testURL = "https://hushuo-api.tuhutest.cn/api";
     public static String javaworkURL = "http://int-restful-mkt-content-audit.ad.tuhu.work:9010";
-    public static String javatestURL = "https://mkt-cms.tuhutest.cn";
+    public static String javatestURL = "https://mkt-gateway.tuhutest.cn/mkt-cms";
     public static String prodURL = "https://hushuo-api.tuhu.cn/api";
     public static int testUserid = 11344091;
     public static int prodUserid = 26150043;
