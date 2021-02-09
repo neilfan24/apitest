@@ -3,7 +3,7 @@
 <suite name="All Test Suite" allow-return-values="true">
     <test name="demo">
                 <classes>
-                    <class name="com.tuhu.demo.BoardList"/>
+                    <class name="com.tuhu.demo.ReplyList"/>
                     <!--<class name="com.tuhu.demo.AddVote"/>
                     <class name="com.tuhu.demo.DelVote"/>
                     <class name="com.tuhu.demo.CreateTopic"/>
