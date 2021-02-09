@@ -69,6 +69,7 @@
                         <property>
                             <name>allure.results.directory</name>
                             <!--<value>./target/allure-results</value>-->
+
                             <value>C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\apitest\target\allure-results</value>
                         </property>
                     </systemProperties>
