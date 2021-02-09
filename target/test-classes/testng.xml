@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" allow-return-values="true">
+<suite allow-return-values="true" name = "Suite">
     <test name="demo">
                 <classes>
                     <class name="com.tuhu.demo.BoardList"/>
