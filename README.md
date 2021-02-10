@@ -20,4 +20,5 @@
                 </configuration>
                 
                 
-jenkins全局配置：Allure Commandline的安装目录路径为：D:\allure-2.13.8，千万不要加\bin         
+jenkins全局配置：Allure Commandline的安装目录路径为：D:\allure-2.13.8，千万不要加\bin    
+https://github.com/neilfan24/apitest/blob/master/img/allure%20report%20setting.png
