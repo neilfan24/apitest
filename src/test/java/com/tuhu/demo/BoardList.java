@@ -13,7 +13,7 @@ public class BoardList {
         baseURI = Settings.javatestURL;
     }
 
-    @Step("获取全部板块列表，并验证板块id：2是否返回")
+    @Step(value = "获取全部板块列表，并验证板块id：2是否返回")
     @Test
     public void GetBoardList()
     {
